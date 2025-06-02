@@ -1,0 +1,33 @@
+
+
+body{
+    background-color: #40414F;
+    color: aliceblue;
+    
+}
+
+.contenedor_contactos{
+    margin-top: 40px;
+}
+
+.contenedor_1{
+    margin-top: 40px;;
+}
+
+
+
+.listardatos{
+    margin-top: 40px;
+}
+
+.decoracion_1{
+    width: 100px;
+    height: 80px;
+}
+.ajustar{
+    height: 700px;
+}
+
+.puntolimpio{
+    width: 500px;
+}

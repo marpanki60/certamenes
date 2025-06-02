@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} Login {% endblock %}
+<div class="columns"></div>
+{% block content %} 
+
+    <div class="column is-half">
+
+        <h1 class="is-size-3 mt-3">Login</h1>
+        {% if form.errors %}
+
+        <p class="is-size-5">
+            Tu usuario o contraseña no es 
+            correcta porfavor intente otra ves
+        </p>
+        {% else %}
+            <p class="is-size-5">
+                Complete el formulario para ingresar sesion:
+            </p>
+        {% endif %}
+
+        <div class="login-form">
+            <form action="{% url 'login' %}" method="post">
+                {% load widget_tweaks %}
+                {% for field in form%}
+                    {{field.label_tag}}
+                    {% render_field field class+="input mt-2" %}
+                {% endfor %}
+                {% csrf_token %}
+                <input type="submit" value="Iniciar sesion" class="button mt-2">
+                <input type="hidden" name="inicio" value="{{next}}">
+            </form>
+        </div>
+
+        <p class="mt-4">
+            <a  href="{% url 'registro' %}">Regístrate aquí</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

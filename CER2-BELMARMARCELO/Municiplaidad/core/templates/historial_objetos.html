@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Historial de Objetos Reciclables</h2>
+
+{% if objetos %}
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Cantidad</th>
+        <th>Descripción</th>
+        <th>Fecha Estimada</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obj in objetos %}
+      <tr>
+        <td>{{ obj.get_tipoMaterial_display }}</td>
+        <td>{{ obj.cantidadMaterial }}</td>
+        <td>{{ obj.descripcion }}</td>
+        <td>{{ obj.fechaEstimada|date:"d/m/Y H:i" }}</td>
+        <td>{{ obj.get_estado_display }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No hay objetos reciclables agregados.</p>
+{% endif %}
+
+<a href="{% url 'agregar_objeto' %}">Agregar nuevo objeto</a>
+{% endblock %}

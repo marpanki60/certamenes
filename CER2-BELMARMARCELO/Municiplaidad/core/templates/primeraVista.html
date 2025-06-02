@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+
+{% load static %}
+
+{%block title%} Re Municipalidad Quillota {%endblock%}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <img class="decoracion_1 col-md-2" src="{% static 'recycling.png'%}" alt="reciclado">
+
+        <div  class= "contenedor_1 col-md-3" >
+            <p>Esta página tiene como objetivo agilizar el proceso de recolección de materiales reciclables, ya sea informando sobre los puntos de acopio disponibles
+                o permitiendo agendar una fecha para el retiro de dichos materiales a domicilio</p>
+        </div>
+        <div  name="listardatos" class="col-md-7"> 
+            <p>Total de peticiones: {{ totalobjetos }}</p>
+            <p>Cantidad total reciclada: {{ sumacantidades }}</p>
+        </div>
+        <img class="col-md-12 ajustar" src="{% static 'muni.jpg'%}" alt="y_ayudan?">
+    </div>
+</div>
+
+
+{%endblock%}
+
